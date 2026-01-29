@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Correo verificado</title>
+  <style>
+    :root {
+      --bg1: #0f2027;
+      --bg2: #203a43;
+      --bg3: #2c5364;
+      --card: #ffffff;
+      --accent: #2ecc71;
+      --accent2: #3498db;
+      --text: #1f2d3d;
+      --muted: #6b7b8c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, var(--bg1), var(--bg2), var(--bg3));
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .card {
+      background: var(--card);
+      width: min(520px, 94vw);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+    h1 {
+      color: var(--text);
+      margin: 14px 0 8px;
+      font-size: 26px;
+    }
+    p {
+      color: var(--muted);
+      margin: 0 0 18px;
+      line-height: 1.5;
+    }
+    .buttons {
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    a.btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: transform 0.05s ease;
+    }
+    a.btn:active { transform: scale(0.98); }
+    .btn-primary {
+      background: var(--accent2);
+      color: white;
+    }
+    .btn-secondary {
+      background: #ecf0f1;
+      color: #2c3e50;
+    }
+    .foot {
+      margin-top: 16px;
+      font-size: 12px;
+      color: #97a6b5;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <span class="badge">VERIFICACIÓN EXITOSA</span>
+    <h1>Correo verificado</h1>
+    <p>Tu cuenta ya está confirmada. Puedes abrir la app y continuar.</p>
+
+    <div class="buttons">
+      <a class="btn btn-primary" href="apptaxi://verified">Abrir app</a>
+      <a class="btn btn-secondary" href="APK_URL_PENDIENTE" id="apkBtn">Descargar APK</a>
+    </div>
+
+    <div class="foot">
+      Si el botón “Abrir app” no funciona, instala la app desde el APK.
+    </div>
+  </main>
+
+  <script>
+    // Fallback: si aún no tienes APK, oculta el botón
+    const apkBtn = document.getElementById("apkBtn");
+    if (apkBtn.getAttribute("href") === "APK_URL_PENDIENTE") {
+      apkBtn.style.display = "none";
+    }
+  </script>
+</body>
+</html>
